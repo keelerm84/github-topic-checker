@@ -1,0 +1,20 @@
+query ListRepositories($query: String!, $after: String) {
+  search(query: $query, type:REPOSITORY, after: $after, first: 100) {
+    nodes {
+      __typename
+      ... on Repository {
+        name
+        repositoryTopics(first: 10) {
+          nodes {
+            topic {
+              name
+            }
+          }
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+    }
+  }
+}
