@@ -1,0 +1,8 @@
+[env]
+GITHUB_TOKEN = "${GITHUB_TOKEN}"
+
+[tasks.schema]
+description = "Download updated schema.json from GitHub GraphQL endpoint"
+install_crate = "graphql_client_cli"
+command = "graphql-client"
+args = ["introspect-schema", "--authorization", "${GITHUB_TOKEN}", "--output", "./graphql/schema.json", "https://api.github.com/graphql"]
