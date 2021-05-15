@@ -70,6 +70,7 @@ fn missing_required_topic(repository: &ListRepositoriesSearchNodesOnRepository) 
         "customer",
         "automation",
         "reporting",
+        "operations",
     ];
 
     let topics: Vec<&str> = repository
